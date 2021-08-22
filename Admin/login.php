@@ -3,6 +3,7 @@
   include('../dbConnection.php');
 ?>
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +17,6 @@
   <div class="loginbox">
     <img src="../images/2.jpg" class="back" alt="">
     <h1>Form Login</h1>
-
     <form action="#" method="POST">
       <p>Username</p>
       <input type="text" name="username" placeholder="Enter Username" required />
@@ -49,12 +49,12 @@
       $_SESSION['user'] = $username;//To check whether the user is logged in or not and logout will unset it
       //Redirect to home page/Dashboard
       header('location:'.SITEURL.'admin/admin.php');
-
-  }else{
-    //User not Available
-    $_SESSION['login'] = "<div class='error text-center'>username or password did not match.</div>";
-    //Redirect to home page/Dashboard
-    header('location:'.SITEURL.'admin/login.php');
-  }
+    }else{
+      //User not Available
+      $_SESSION['login'] = "<div class='error text-center'>username or password did not match.</div>";
+      //Redirect to home page/Dashboard
+      header('location:'.SITEURL.'admin/login.php');
+    }
   }
 ?>
+
